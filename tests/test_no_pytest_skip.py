@@ -1,4 +1,4 @@
-from pylint_plugins.no_pytest_skip import NoPytestSkipChecker
+from flightless_pylint_plugin.no_pytest_skip import NoPytestSkipChecker
 from .utilities import run_checker_on_code
 
 

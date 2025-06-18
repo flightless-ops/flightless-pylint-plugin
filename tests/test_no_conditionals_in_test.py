@@ -1,4 +1,4 @@
-from pylint_plugins.no_conditionals_in_test import NoConditionalsInTestChecker
+from flightless_pylint_plugin.no_conditionals_in_test import NoConditionalsInTestChecker
 from .utilities import run_checker_on_code
 
 

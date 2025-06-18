@@ -1,4 +1,4 @@
-from pylint_plugins.no_direct_settings_import import NoDirectSettingsImportChecker
+from flightless_pylint_plugin.no_direct_settings_import import NoDirectSettingsImportChecker
 from .utilities import run_checker_on_code
 
 
