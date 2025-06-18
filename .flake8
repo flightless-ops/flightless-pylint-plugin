@@ -1,0 +1,13 @@
+[flake8]
+format = default
+max-line-length = 140
+# Verbose errors
+show-source = true
+
+exclude =
+    .git,
+    __pycache__,
+    build,
+    dist,
+    .venv,
+    venv
