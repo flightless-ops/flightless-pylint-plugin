@@ -4,6 +4,11 @@ version = "0.2.0"
 description = "Custom Pylint Rules from Flightless Ops"
 authors = ["Hotline Emu <11667661+hotline-emu@users.noreply.github.com>"]
 license = "Mozilla"
+readme = "README.md"
+homepage = "https://github.com/flightless-ops/flightless-pylint-plugin"
+repository = "https://github.com/flightless-ops/flightless-pylint-plugin"
+documentation = "https://github.com/flightless-ops/flightless-pylint-plugin#readme"
+keywords = ["pylint", "plugin", "linter", "pytest", "settings", "static-analysis"]
 packages = [{ include = "flightless_pylint_plugin" }]
 
 [tool.poetry.dependencies]
