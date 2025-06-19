@@ -1,0 +1,12 @@
+[run]
+source = flightless_pylint_plugin
+omit =
+    */tests/*
+    */dist/*
+    */build/*
+    */__init__.py
+
+[report]
+show_missing = true
+exclude_lines =
+    def register

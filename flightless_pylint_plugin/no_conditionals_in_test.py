@@ -1,4 +1,5 @@
 from pylint.checkers import BaseChecker
+from pylint.lint import PyLinter
 import astroid
 
 RULE_NAME = "no-conditionals-in-test"
@@ -15,7 +16,7 @@ class NoConditionalsInTestChecker(BaseChecker):
         )
     }
 
-    def visit_functiondef(self, node):
+    def visit_functiondef(self, node: astroid.NodeNG) -> None:
         if not node.name.startswith("test"):
             return
 
@@ -28,5 +29,5 @@ class NoConditionalsInTestChecker(BaseChecker):
             self.add_message(RULE_NAME, node=subnode)
 
 
-def register(linter):
+def register(linter: PyLinter) -> None:
     linter.register_checker(NoConditionalsInTestChecker(linter))

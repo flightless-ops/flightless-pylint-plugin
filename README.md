@@ -20,12 +20,30 @@ enable=no-pytest-skip,
 ### Requirements
 
 `Python >= 3.12`
+`Invoke`
 `Poetry`
 
 ### Installing
 
 Run `poetry install` to get started.
 
-### Testing
+### Using Invoke
 
-Run `pytest` to start the test suite.
+The following command will show you current available options:
+
+```bash
+invoke --list
+```
+
+As of writing, the following commands can be used as listed:
+
+```bash
+  invoke flake8   # Runs flake8 on the project.
+  invoke pylint   # Runs pylint on the project.
+  invoke mypy     # Runs mypy on the project.
+  invoke lint     # Runs flake8 pylint and mypy on the project in sequence.
+  invoke test     # Runs pytest on the project.
+  invoke coverage # Runs pytest on the project + coverage reports.
+  invoke build    # Builds the project.
+  invoke publish  # Will publish the project pending you have configured poetry to be able to.
+```

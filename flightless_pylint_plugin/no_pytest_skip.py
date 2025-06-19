@@ -1,4 +1,5 @@
 from pylint.checkers import BaseChecker
+from pylint.lint import PyLinter
 import astroid
 
 RULE_NAME = "no-pytest-skip"
@@ -15,7 +16,7 @@ class NoPytestSkipChecker(BaseChecker):
         )
     }
 
-    def visit_call(self, node):
+    def visit_call(self, node: astroid.NodeNG) -> None:
         func = node.func
         # Match pytest.skip or from pytest import skip.
         if isinstance(func, astroid.Attribute):
@@ -25,5 +26,5 @@ class NoPytestSkipChecker(BaseChecker):
             self.add_message(RULE_NAME, node=node)
 
 
-def register(linter):
+def register(linter: PyLinter) -> None:
     linter.register_checker(NoPytestSkipChecker(linter))
