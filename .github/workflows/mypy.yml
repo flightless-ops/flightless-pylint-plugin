@@ -1,0 +1,13 @@
+name: MyPy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  pylint:
+    uses: flightless-ops/automation/.github/workflows/mypy.yml@main
+    with:
+      python-version: '3.12'
+      target-path: '.'

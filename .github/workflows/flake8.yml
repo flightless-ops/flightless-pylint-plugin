@@ -1,0 +1,13 @@
+name: Flake8
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  pylint:
+    uses: flightless-ops/automation/.github/workflows/flake8.yml@main
+    with:
+      python-version: '3.12'
+      target-path: '.'
