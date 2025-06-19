@@ -1,4 +1,6 @@
 from pylint.checkers import BaseChecker
+from pylint.lint import PyLinter
+from astroid import NodeNG
 
 RULE_NAME = "no-direct-settings-import"
 
@@ -14,19 +16,15 @@ class NoDirectSettingsImportChecker(BaseChecker):
         )
     }
 
-    def visit_importfrom(self, node):
-        if (
-            node.modname
-            and node.modname.endswith(".settings")
-            or node.modname == "settings"
-        ):
+    def visit_importfrom(self, node: NodeNG) -> None:
+        if node.modname and node.modname.endswith(".settings") or node.modname == "settings":
             self.add_message(RULE_NAME, node=node)
 
-    def visit_import(self, node):
+    def visit_import(self, node: NodeNG) -> None:
         for name, _alias in node.names:
             if name.endswith(".settings") or name == "settings":
                 self.add_message(RULE_NAME, node=node)
 
 
-def register(linter):
+def register(linter: PyLinter) -> None:
     linter.register_checker(NoDirectSettingsImportChecker(linter))
