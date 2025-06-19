@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  pylint:
+  pytest:
     uses: flightless-ops/flightless-ci/.github/workflows/pytest.yml@main
     with:
       python-version: '3.12'
