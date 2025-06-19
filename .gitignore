@@ -197,3 +197,6 @@ cython_debug/
 .pylintrc
 pyrightconfig.json
 .flake8
+
+# Scratch Files
+todo.md
