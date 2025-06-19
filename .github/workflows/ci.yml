@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  flake8:
+    name: Flake8
+    uses: flightless-ops/flightless-ci/.github/workflows/flake8.yml@main
+    with:
+      python-version: '3.12'
+      target-path: '.'
+
+  mypy:
+    name: MyPy
+    uses: flightless-ops/flightless-ci/.github/workflows/mypy.yml@main
+    with:
+      python-version: '3.12'
+      target-path: '.'
+
+  pylint:
+    name: Pylint
+    uses: flightless-ops/flightless-ci/.github/workflows/pylint.yml@main
+    with:
+      python-version: '3.12'
+      target-path: '.'
+
+  pytest:
+    name: Pytest
+    uses: flightless-ops/flightless-ci/.github/workflows/pytest.yml@main
+    with:
+      python-version: '3.12'
+      target-path: '.'
+      package-name: 'flightless_pylint_plugin'
