@@ -7,7 +7,7 @@ on:
 
 jobs:
   pylint:
-    uses: flightless-ops/automation/.github/workflows/pytest.yml@main
+    uses: flightless-ops/flightless-ci/.github/workflows/pytest.yml@main
     with:
       python-version: '3.12'
       target-path: '.'
