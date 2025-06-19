@@ -6,7 +6,6 @@ from .no_prints_outside_main import NoPrintOutsideMainChecker
 from .except_without_log_or_reraise import ExceptWithoutLogOrReraiseChecker
 from .test_files_start_with_test import TestFilesStartWithTestChecker
 from .unused_logger import UnusedLoggerChecker
-from .public_function_docstring import PublicFunctionDocstringChecker
 
 
 def register(linter: PyLinter) -> None:
@@ -17,4 +16,3 @@ def register(linter: PyLinter) -> None:
     linter.register_checker(ExceptWithoutLogOrReraiseChecker(linter))
     linter.register_checker(TestFilesStartWithTestChecker(linter))
     linter.register_checker(UnusedLoggerChecker(linter))
-    linter.register_checker(PublicFunctionDocstringChecker(linter))
