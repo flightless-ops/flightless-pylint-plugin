@@ -1,5 +1,0 @@
-{
-  "include": ["flightless_pylint_plugin", "tests"],
-  "exclude": ["**/__pycache__"],
-  "reportAttributeAccessIssue": false
-}
