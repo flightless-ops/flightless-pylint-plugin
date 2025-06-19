@@ -1,4 +1,3 @@
-from io import StringIO
 from collections.abc import Callable
 from unittest.mock import MagicMock
 from typing import Any
